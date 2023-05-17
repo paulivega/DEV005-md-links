@@ -1,5 +1,5 @@
 // importar las funciones
-const { getAbsolutePath } = require('./road.js');
+const { getAbsolutePath } = require('./route.js');
 const {isFileOrDirectory } = require('./isFileOrDirectory.js')
 // construir la función md links.
 
