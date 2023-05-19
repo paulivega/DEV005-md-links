@@ -5,7 +5,7 @@ const userPath = process.argv[2];
 //validar si es absoluto o pasar a absoluto
 const getAbsolutePath = (userPath) => {
   if (!fsModules.existsSync(userPath)){
-    return false
+    return 'false'
   }
   if (pathModules.isAbsolute(userPath)) {
     return userPath
