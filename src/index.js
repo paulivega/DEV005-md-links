@@ -1,6 +1,7 @@
 // importar las funciones
 const { getAbsolutePath } = require('./route.js');
 const {isFileOrDirectory } = require('./isFileOrDirectory.js')
+const {getAllLinks} = require('./extractLinks.js')
 // construir la función md links.
 
 const mdLinks = (userPath) => {
@@ -8,10 +9,14 @@ const mdLinks = (userPath) => {
     // constante que ejecuta la función que valida la ruta
     //const absolutePath = getAbsolutePath(userPath);
     const mdFiles = isFileOrDirectory(getAbsolutePath(userPath));
-    if(mdFiles){
+    const links = getAllLinks(mdFiles)
+    if(userPath === false){
+      reject(err);
+    }
+    if(links){
       // si es true resuelvo mostrando la ruta en consola
       //console.log(userPath);
-      resolve(console.log(mdFiles));
+      resolve(links);
       
     }else{
       //si es false, salgo del programa
