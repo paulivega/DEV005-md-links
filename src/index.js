@@ -1,29 +1,30 @@
 // importar las funciones
-const { getAbsolutePath } = require('./road.js');
+const { getAbsolutePath } = require('./route.js');
+const {isFileOrDirectory } = require('./isFileOrDirectory.js')
+const {getAllLinks} = require('./extractLinks.js')
+// construir la función md links.
 
-//obtener el argumento entregado por el usuario
-const userPath = process.argv[2];
-//const userValidate = process.argv[3];
-
-const absolutePath = getAbsolutePath(userPath);
-/*
-const mdLinks = () => {
+const mdLinks = (userPath) => {
   return new Promise((resolve, reject) => {
-    if(pathElements.isAbsolutePath(userPath)){
+    // constante que ejecuta la función que valida la ruta
+    //const absolutePath = getAbsolutePath(userPath);
+    const mdFiles = isFileOrDirectory(getAbsolutePath(userPath));
+    const links = getAllLinks(mdFiles)
+    if(userPath === false){
+      reject(err);
+    }
+    if(links){
+      // si es true resuelvo mostrando la ruta en consola
+      //console.log(userPath);
+      resolve(links);
       
-      //devolver el userPath ingresado
-      resolve(userPath)
     }else{
-      //pasar la relativa a absouluta
-      reject('ohoh')
+      //si es false, salgo del programa
+      reject()
     }
   });
-};*/
-
-// crear objeto options:
-// const options = new Object();
-// options.validate = false;
-// options.stats = false;
-
-
+};
+module.exports = {
+  mdLinks,
+};
 
