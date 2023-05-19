@@ -1,6 +1,7 @@
 const { mdLinks } = require('./index.js');
 // argumento de mdLinks
 const userPath = process.argv[2];
+const option = process.argv[3];
 
 // Para consumir la función md link, primero ejecutar y pasar el argumento.
 mdLinks(userPath)
