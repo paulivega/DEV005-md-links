@@ -20,7 +20,7 @@ const convertMdtoHtml = (file) => {
   return elementsAnchor
 }
 // fn obtiene los links desde HTMLCollection
-const getLinksFromHtml = (elementsAnchor,fileRoute) => {
+const getLinksFromHtml = (elementsAnchor, fileRoute) => {
   // element Anchor(HTMLCollection) se transforma array
   const arrayAnchor = Array.from(elementsAnchor);
   //recorrer el arreglo y me entrega el :href y .text de cada anchor
@@ -38,13 +38,13 @@ const readMdFile = (fileRoute) => {
     fsModules.readFile(fileRoute, 'utf-8', (err, file) => {
       if (err) {
         reject(err)
+      } else {
+        const convertToHtml = convertMdtoHtml(file);
+        const getLinks = getLinksFromHtml(convertToHtml, fileRoute);
+        resolve(getLinks)
+        
       }
-      const convertToHtml = convertMdtoHtml(file);
-      const getLinks = getLinksFromHtml(convertToHtml, fileRoute);
-      resolve(getLinks)
-      
     })
-
   })
 };
 
@@ -55,5 +55,5 @@ const getAllLinks = (arrayFilesMd) => {
   });
   return Promise.all(arrayLinks);
 }
-module.exports = { getAllLinks,};
+module.exports = { getAllLinks, };
 
