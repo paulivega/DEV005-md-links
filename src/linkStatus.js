@@ -10,11 +10,9 @@ const axios = require('axios');
 const linkStatus = (object) => {
   return axios.get(object.href)
     .then((result) => {
-      // console.log(result.status)
       return { href: object.href, text: object.text, file: object.file, status: result.status, ok: result.statusText };
     })
     .catch((error) => {
-      // console.log('BANDERA')
       return { href: object.href, text: object.text, file: object.file, status: error.response.status, ok: error.response.statusText };
     });
 };

@@ -51,6 +51,3 @@ const getAllLinks = (arrayFilesMd) => {
 };
 module.exports = { getAllLinks, convertMdtoHtml, getLinksFromHtml, readMdFile };
 const testPath = '/Users/pauli/laboratoria/DEV005-md-links/src/files'
-
-//console.log(getLinksFromHtml(convertMdtoHtml(text), testPath) )
-//node src/extractLinks.js

@@ -1,6 +1,5 @@
 const pathModules = require('path');
 const fsModules = require('fs');
-
 //construir función recursiva
 const isFileOrDirectory = (absolutePath) => {
   let arrayFilesMd = [];
