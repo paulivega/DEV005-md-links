@@ -1,17 +1,22 @@
 {
-  "name": "md-links",
+  "name": "md-pauli",
+  "bin": {"md-pauli" : "src/cli.js"},
   "version": "0.1.0",
   "engines": {
     "node": ">=16.x"
   },
   "devDependencies": {
-    "eslint": "^8.40.0",
+    "eslint": "^8.41.0",
     "jest": "^29.5.0"
   },
   "scripts": {
-    "test": "jest --verbose --coverage"
+    "test": "jest --verbose --coverage",
+    "lint": "eslint .  --ext .js",
+    "lint-fix": "eslint . --ext .js --fix"
   },
   "dependencies": {
+    "axios": "^1.4.0",
+    "colors": "^1.4.0",
     "jsdom": "^22.0.0",
     "marked": "^5.0.2",
     "marked-mangle": "^1.0.1"
