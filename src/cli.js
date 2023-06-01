@@ -11,14 +11,13 @@ let optionsObj = {
   validate: false,
   stats: false,
 };
-// const [,,, opt1, opt2] = process.argv;
-// stats es verdader
+
 if (options.includes('--validate') && (!options.includes('--stats'))) {
   optionsObj.validate = true;
 }
 else if (!options.includes('--validate') && (options.includes('--stats'))) {
   optionsObj.stats = true;
-}// solo validate verdadero
+}
 else if (options.includes('--validate') && (options.includes('--stats'))) {
   optionsObj.validate = true;
   optionsObj.stats = true;
@@ -35,7 +34,6 @@ mdLinks(userPath, optionsObj)
       console.log('');
       console.log(`Total: ${allStats.Total} Uniques: ${allStats.Uniques} ${allStats.Broken ? `Broken: ${allStats.Broken}`.red  : ''} `.green);
     }else if (optionsObj.validate && !optionsObj.stats){
-      //console.log(res)
       res.forEach((element) => {
         console.log('');
         console.log(`URL: ${element.href}`.green);
@@ -61,12 +59,6 @@ mdLinks(userPath, optionsObj)
     process.exit(1)
   })
 
-
-//stats con validate
-// retorna ({total, broken y unique})
-// solo stats
-
-// retorna ({total, uniques})
 
 
 
