@@ -2,8 +2,14 @@
   "name": "md-pauli",
   "bin": {"md-pauli" : "src/cli.js"},
   "version": "0.1.0",
+  "description": "This tool scan files and directories, to extract links from markdown files",
   "engines": {
     "node": ">=16.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/paulivega/DEV005-md-links"
+
   },
   "devDependencies": {
     "eslint": "^8.41.0",
@@ -20,5 +26,6 @@
     "jsdom": "^22.0.0",
     "marked": "^5.0.2",
     "marked-mangle": "^1.0.1"
-  }
+  },
+  "license": "MIT"
 }
