@@ -3,4 +3,4 @@ El primero funciona, es el [github de md links] (https://github.com/Laboratoria/
 
 El segundo link, es la página de [laboratoria](https://www.laboratoria.la/)lugar al que nunca más entré desde que abrí mi cuenta para postular.
 
-Y termino mi tercer link, con el link que [no funciona de mdlinks](http://community.laboratoria.la/tmodulos-librerias-paquetes-frameworks-cual-es-la-diferencia/175)
+Y termino mi tercer link, con el link que [no funciona de mdlinks](https://v8.dev/sdfskdjfs%C3%B1ldfjslkdfj)
